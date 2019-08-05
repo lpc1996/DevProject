@@ -4,10 +4,10 @@
 #include "base.h"
 #include <time.h>
 
-class SysTime
+class Time
 {
 	public:
-		SysTime();
+		Time();
 		int getYear();
 		int getMonth();
 		int getDay();

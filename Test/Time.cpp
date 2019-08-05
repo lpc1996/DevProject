@@ -1,10 +1,10 @@
-#include "SysTime.h"
+#include "Time.h"
 
-SysTime::SysTime(){ 
+Time::Time(){ 
 	this->InitTime();
 }
 
-void SysTime::InitTime(){
+void Time::InitTime(){
 	string weeks[] = {"日","一","二","三","四","五","六"}; 
 	//获取系统时间  
 	time_t now_time=time(NULL);  
@@ -20,34 +20,34 @@ void SysTime::InitTime(){
 	this->week=weeks[t_tm->tm_wday];
 }
 
-int SysTime::getYear(){
+int Time::getYear(){
 	return this->year;
 }
-int SysTime::getMonth(){
+int Time::getMonth(){
 	return this->month;
 }
-int SysTime::getDay(){
+int Time::getDay(){
 	return this->day;
 }
-int SysTime::getHour(){
+int Time::getHour(){
 	return this->hour;
 }
-int SysTime::getMinute(){
+int Time::getMinute(){
 	return this->minute;
 }
-int SysTime::getSecond(){
+int Time::getSecond(){
 	return this->second;
 }
-string SysTime::getWeek(){
+string Time::getWeek(){
 	return this->week;
 }
-string SysTime::toString(){//将获取到的时间转换成字符串 
+string Time::toString(){//将获取到的时间转换成字符串 
 	char str[100];
 	sprintf(str,"%d年%d月%d日 %d:%02d:%02d;星期",this->year,this->month,this->day,this->hour,this->minute,this->second);
 	string timeStr=string(str);
 	timeStr.append(this->week);
 	return timeStr;
 }
-void SysTime::printTime(){
+void Time::printTime(){
 	cout << "当前系统时间为：" <<this->toString() << endl;
 }
